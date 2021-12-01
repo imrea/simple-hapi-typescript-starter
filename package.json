@@ -1,0 +1,52 @@
+{
+  "name": "simple-hapi-typescript-starter",
+  "version": "1.0.0",
+  "description": "Simple Hapi TypeScript Starter | 2021",
+  "main": "build/index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "prebuild": "rm -rf build",
+    "build": "tsc -p tsconfig.build.json",
+    "prestart": "yarn run build",
+    "start": "node build/index.js",
+    "dev": "nodemon",
+    "lint": "eslint . --ext .ts",
+    "pretty": "prettier 'src/**/*.ts' --write --loglevel warn",
+    "test": "jest --projects jest-unit.config.js",
+    "test:e2e": "jest --projects jest-e2e.config.js",
+    "prepare": "husky install",
+    "cz": "git-cz",
+    "cs": "changeset",
+    "csv": "changeset version"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.18.0",
+    "@trivago/prettier-plugin-sort-imports": "^3.1.1",
+    "@types/hapi__hapi": "^20.0.9",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
+    "dotenv": "^10.0.0",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^25.2.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "git-cz": "^4.8.0",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^20.2.1"
+  }
+}
