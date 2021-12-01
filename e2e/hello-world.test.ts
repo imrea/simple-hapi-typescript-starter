@@ -1,18 +1,17 @@
 import Hapi from '@hapi/hapi';
-import { createServer } from '../src/server';
-
-let server: Hapi.Server;
-
-beforeEach(async () => {
-  server = await createServer();
-  await server.initialize();
-});
-
-afterEach(async () => {
-  await server.stop();
-});
+import { initServer } from '../src/server';
 
 describe('GET /', () => {
+  let server: Hapi.Server;
+
+  beforeEach(async () => {
+    server = await initServer();
+  });
+
+  afterEach(async () => {
+    await server.stop();
+  });
+
   it('responds with 200', async () => {
     const res = await server.inject({
       method: 'GET',

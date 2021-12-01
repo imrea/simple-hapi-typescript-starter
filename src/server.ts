@@ -12,7 +12,7 @@ export const createServer = async () => {
       path: '/',
       handler: (_request, _h) => {
         return {
-          message: 'Hello Hapi!',
+          message: 'Hello World!',
         };
       },
     },
