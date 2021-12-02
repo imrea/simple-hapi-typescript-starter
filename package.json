@@ -12,9 +12,7 @@
   "scripts": {
     "prebuild": "rm -rf build",
     "build": "tsc -p tsconfig.build.json",
-    "prestart": "yarn run build",
-    "start": "node build/index.js",
-    "dev": "nodemon",
+    "start": "nodemon",
     "lint": "eslint . --ext .ts",
     "pretty": "prettier 'src/**/*.ts' --write --loglevel warn",
     "test": "jest --projects jest-unit.config.js",
